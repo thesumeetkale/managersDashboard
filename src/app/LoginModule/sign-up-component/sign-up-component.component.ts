@@ -17,6 +17,7 @@ export class SignUpComponentComponent implements OnInit {
   submitted: boolean;
   showError: boolean;
   errorMessage: string;
+  date = new Date();
 
   constructor(
     private formBuilder: FormBuilder,

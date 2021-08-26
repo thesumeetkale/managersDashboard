@@ -57,7 +57,7 @@
       type="date"
       class="inputStyle birthDateClass"
       formControlName="birthDate"
-      min="new Date()"
+      max="{{ date | date: 'yyyy-MM-dd' }}"
     />
 
     <div class="errorDiv">

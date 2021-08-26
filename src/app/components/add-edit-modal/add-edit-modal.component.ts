@@ -16,6 +16,7 @@ export class AddEditModalComponent implements OnInit {
   employeeForm: FormGroup;
   submitted: boolean;
   edit: boolean;
+  date = new Date();
 
   constructor(
     private formBuilder: FormBuilder,
@@ -58,7 +59,6 @@ export class AddEditModalComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    console.log(this.employeeForm.invalid);
     if (!this.employeeForm.invalid) {
       var payload = {
         firstName: this.employeeForm.value.firstName,
@@ -68,7 +68,6 @@ export class AddEditModalComponent implements OnInit {
         mobile: this.employeeForm.value.mobile,
         city: this.employeeForm.value.city,
       };
-      console.log(payload);
 
       if (this.edit) {
         let editPayload = {
@@ -78,7 +77,6 @@ export class AddEditModalComponent implements OnInit {
         this.employeeService
           .editEmployee(this.EmployeeData.id, editPayload)
           .subscribe((res) => {
-            console.log(res);
             this.closeTheModal.emit();
           });
       } else {

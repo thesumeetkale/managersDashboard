@@ -36,7 +36,6 @@ export class EmployeeListComponent implements OnInit {
 
   getEmployeesData() {
     this.employeeService.getAllEmployees().subscribe((data: any) => {
-      console.log(data);
       this.employeesData = data;
     });
   }
@@ -69,6 +68,5 @@ export class EmployeeListComponent implements OnInit {
   closeTheModal() {
     this.modalService.dismissAll();
     this.getEmployeesData();
-    console.log("Done");
   }
 }

@@ -6,7 +6,6 @@ export class AuthGuardService implements CanActivate {
   constructor(public router: Router) {}
   canActivate(): boolean {
     let user = localStorage.getItem("user");
-    console.log(user);
     if (!user) {
       this.router.navigate(["login"]);
       return false;

@@ -33,13 +33,10 @@ export class TableDataComponent implements OnInit {
     private modalService: NgbModal
   ) {}
 
-  ngOnInit() {
-    console.log(this.employeesData);
-  }
+  ngOnInit() {}
 
   openDeletePopup(content, row) {
     this.EmployeeData = row;
-    console.log(row);
     this.modalService.open(content).result.then(
       (res) => {},
       (res) => {}
@@ -47,6 +44,14 @@ export class TableDataComponent implements OnInit {
   }
 
   openEditPopup(content, row) {
+    this.EmployeeData = row;
+    this.modalService.open(content).result.then(
+      (res) => {},
+      (res) => {}
+    );
+  }
+
+  openViewDetailsPopup(content, row) {
     this.EmployeeData = row;
     this.modalService.open(content).result.then(
       (res) => {},

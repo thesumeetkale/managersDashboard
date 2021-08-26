@@ -1,0 +1,25 @@
+<div class="mainDiv">
+  <img
+    style="float: right"
+    src="../../../assets/images/cross.png"
+    height="20"
+    (click)="closeTheModal.emit($event)"
+    class="cursor"
+  />
+  <h3>Employee Details</h3>
+
+  <div class="my-4" *ngIf="EmployeeData">
+    <h6>
+      <b>Full name</b> - {{ EmployeeData.firstName | titlecase }}
+      {{ EmployeeData.lastName | titlecase }}
+    </h6>
+    <h6><b>Address</b> - {{ EmployeeData.address | titlecase }}</h6>
+    <h6><b>Mobile Number</b> - {{ EmployeeData.mobile }}</h6>
+    <h6><b>City</b> - {{ EmployeeData.city | titlecase }}</h6>
+    <h6><b>Birth Date</b> - {{ EmployeeData.birthDate }}</h6>
+    <h6>
+      <b>Age</b> -
+      {{ EmployeeData.birthDate | calculateAge }}
+    </h6>
+  </div>
+</div>

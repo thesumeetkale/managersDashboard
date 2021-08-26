@@ -7,13 +7,20 @@
   <tbody>
     <tr *ngFor="let employee of employeesData">
       <th scope="row">{{ employee.id }}</th>
-      <td>{{ employee.firstName }}</td>
-      <td>{{ employee.lastName }}</td>
-      <td>{{ employee.address }}</td>
+      <td>{{ employee.firstName | titlecase }}</td>
+      <td>{{ employee.lastName | titlecase }}</td>
+      <td>{{ employee.address | titlecase }}</td>
       <td>{{ employee.birthDate }}</td>
       <td>{{ employee.mobile }}</td>
       <td>{{ employee.city }}</td>
-      <td><button class="btn btn-secondary">View</button></td>
+      <td>
+        <button
+          class="btn btn-secondary"
+          (click)="openEditPopup(viewDetailsPopup, employee)"
+        >
+          View
+        </button>
+      </td>
       <td>
         <button
           class="btn btn-success"
@@ -47,4 +54,11 @@
     (closeTheModal)="closeTheModal($event)"
     (deleteEmployee)="deleteEmployee($event)"
   ></app-add-edit-modal>
+</ng-template>
+
+<ng-template #viewDetailsPopup let-modal>
+  <app-view-employee-details
+    [EmployeeData]="EmployeeData"
+    (closeTheModal)="closeTheModal($event)"
+  ></app-view-employee-details>
 </ng-template>

@@ -6,7 +6,9 @@ import { NavbarComponent } from "../navbar/navbar.component";
 import { AddEditModalComponent } from "../add-edit-modal/add-edit-modal.component";
 import { TableDataComponent } from "../table-data/table-data.component";
 import { DeleteModalComponent } from "../delete-modal/delete-modal.component";
+import { ViewEmployeeDetailsComponent } from "../view-employee-details/view-employee-details.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { CalculateAgePipe } from "src/app/pipes/calculate-age.pipe";
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     AddEditModalComponent,
     TableDataComponent,
     DeleteModalComponent,
+    ViewEmployeeDetailsComponent,
+    CalculateAgePipe,
   ],
   imports: [CommonModule, NgbModule, FormsModule, ReactiveFormsModule],
   exports: [
@@ -21,6 +25,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     AddEditModalComponent,
     TableDataComponent,
     DeleteModalComponent,
+    ViewEmployeeDetailsComponent,
   ],
 })
 export class ComponentsModuleModule {}
