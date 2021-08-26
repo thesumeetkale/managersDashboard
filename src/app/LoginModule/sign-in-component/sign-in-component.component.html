@@ -1,0 +1,45 @@
+<form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+  <div class="signInDiv">
+    <div>
+      <input
+        placeholder="Email Address"
+        class="inputStyle w-100"
+        formControlName="email"
+      />
+      <div class="errorDiv">
+        <div
+          *ngIf="submitted && f.email.errors && f.email.errors.required"
+          class="errorMsg"
+        >
+          Required
+        </div>
+      </div>
+      <input
+        placeholder="Password"
+        class="inputStyle w-100"
+        type="password"
+        formControlName="password"
+      />
+      <div class="errorDiv">
+        <div
+          *ngIf="submitted && f.password.errors && f.password.errors.required"
+          class="errorMsg"
+        >
+          Required
+        </div>
+        <div class="errorMsg" *ngIf="errorMessage">
+          {{ error }}
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <button class="btn btn-primary w-100 primary-background">Sign In</button>
+      <h6 class="mt-4 d-flex justify-content-center">
+        <a class="cursor primary-color" (click)="showSignUpDiv.emit($event)">
+          Sign Up?</a
+        >
+      </h6>
+    </div>
+  </div>
+</form>

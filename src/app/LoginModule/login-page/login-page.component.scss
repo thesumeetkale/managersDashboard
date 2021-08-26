@@ -1,0 +1,23 @@
+.mainDiv {
+  background-color: #0492c2;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centreDiv {
+  height: 80%;
+  width: 500px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.SignUpSignInDiv {
+  margin: 30px;
+}
+
+.headingDiv {
+  padding: 30px;
+  border-bottom: 1px solid #e0e0e0;
+}

@@ -1,0 +1,21 @@
+<div style="padding: 25px">
+  <img
+    src="../../../assets/images/cross.png"
+    style="float: right"
+    height="20"
+    (click)="closeTheModal.emit($event)"
+    class="cursor"
+  />
+  <br />
+  <div>
+    <h5 class="my-4">Are you sure you want to delete this employee?</h5>
+    <div style="float: right" class="my-4">
+      <button class="btn btn-secondary" (click)="closeTheModal.emit($event)">
+        No
+      </button>
+      <button class="btn btn-danger ml-3" (click)="deleteEmployee.emit($event)">
+        Yes
+      </button>
+    </div>
+  </div>
+</div>

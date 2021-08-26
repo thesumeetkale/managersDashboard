@@ -1,0 +1,155 @@
+<div>
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <input
+      placeholder="First Name"
+      class="inputStyle"
+      style="margin-right: 10px"
+      formControlName="firstName"
+    />
+    <input
+      placeholder="Last Name"
+      class="inputStyle"
+      formControlName="lastName"
+    />
+    <div class="errorDiv">
+      <div class="row">
+        <div class="col-6">
+          <div
+            *ngIf="
+              submitted && f.firstName.errors && f.firstName.errors.required
+            "
+            class="errorMsg"
+          >
+            Required
+          </div>
+        </div>
+        <div class="col-6">
+          <div
+            *ngIf="submitted && f.lastName.errors && f.lastName.errors.required"
+            class="errorMsg"
+          >
+            Required
+          </div>
+        </div>
+      </div>
+    </div>
+    <input
+      placeholder="Address"
+      class="inputStyle w-100"
+      formControlName="address"
+    />
+    <div class="errorDiv">
+      <div
+        *ngIf="submitted && f.address.errors && f.address.errors.required"
+        class="errorMsg"
+      >
+        Required
+      </div>
+    </div>
+    <input
+      placeholder="Email Address"
+      class="inputStyle"
+      style="margin-right: 10px"
+      formControlName="email"
+    />
+    <input
+      placeholder="Birth Date"
+      type="date"
+      class="inputStyle birthDateClass"
+      formControlName="birthDate"
+      min="new Date()"
+    />
+
+    <div class="errorDiv">
+      <div class="row">
+        <div class="col-6">
+          <div
+            *ngIf="submitted && f.email.errors && f.email.errors.required"
+            class="errorMsg"
+          >
+            Required
+          </div>
+          <div
+            *ngIf="submitted && f.email.errors && f.email.errors.email"
+            class="errorMsg"
+          >
+            Invalid Email
+          </div>
+        </div>
+        <div class="col-6">
+          <div
+            *ngIf="
+              submitted && f.birthDate.errors && f.birthDate.errors.required
+            "
+            class="errorMsg"
+          >
+            Required
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <input
+      placeholder="Password"
+      class="inputStyle w-100"
+      formControlName="password"
+      type="password"
+    />
+    <div class="errorDiv">
+      <div
+        *ngIf="submitted && f.password.errors && f.password.errors.required"
+        class="errorMsg"
+      >
+        Required
+      </div>
+      <div
+        *ngIf="submitted && f.password.errors && f.password.errors.pattern"
+        class="errorMsg"
+      >
+        Password must contain 1 Uppercase, lowercase, character & numeric
+      </div>
+      <div
+        *ngIf="submitted && f.password.errors && f.password.errors.minLength"
+        class="errorMsg"
+      >
+        Password length must be more then 8
+      </div>
+    </div>
+    <input
+      placeholder="Confirm Password"
+      class="inputStyle w-100"
+      formControlName="confirmPassword"
+      type="password"
+    />
+    <div class="errorDiv">
+      <div *ngIf="confirmPasswordError" class="errorMsg">
+        Your password & confirm password do not match.
+      </div>
+      <div
+        *ngIf="
+          submitted &&
+          f.confirmPassword.errors &&
+          f.confirmPassword.errors.required
+        "
+        class="errorMsg"
+      >
+        Required
+      </div>
+      <div class="errorMsg" *ngIf="showError">
+        {{ errorMessage }}
+      </div>
+    </div>
+
+    <button class="btn btn-primary w-100 mt-2 primary-background">
+      Sign Up
+    </button>
+
+    <div class="mt-4 d-flex justify-content-center">
+      <h6>
+        <a class="cursor primary-color" (click)="showSignInDiv.emit($event)"
+          >Already a user? Sign In</a
+        >
+      </h6>
+    </div>
+  </form>
+</div>

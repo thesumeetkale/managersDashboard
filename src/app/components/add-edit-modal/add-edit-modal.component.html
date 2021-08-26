@@ -1,0 +1,95 @@
+<div style="margin: 30px">
+  <div class="mb-3 d-flex justify-content-between">
+    <h5>{{ edit == true ? "Edit" : "Add" }} Employee</h5>
+    <img
+      src="../../../assets/images/cross.png"
+      class="cursor"
+      height="20"
+      (click)="closeTheModal.emit($event)"
+    />
+  </div>
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <input
+      placeholder="First Name"
+      class="inputStyle w-100"
+      formControlName="firstName"
+    />
+    <div class="errorDiv">
+      <div
+        *ngIf="submitted && f.firstName.errors && f.firstName.errors.required"
+        class="errorMsg"
+      >
+        Required
+      </div>
+    </div>
+    <input
+      placeholder="Last Name"
+      class="inputStyle w-100"
+      formControlName="lastName"
+    />
+    <div class="errorDiv">
+      <div
+        *ngIf="submitted && f.lastName.errors && f.lastName.errors.required"
+        class="errorMsg"
+      >
+        Required
+      </div>
+    </div>
+    <input
+      placeholder="Address"
+      class="inputStyle w-100"
+      formControlName="address"
+    />
+    <div class="errorDiv">
+      <div
+        *ngIf="submitted && f.address.errors && f.address.errors.required"
+        class="errorMsg"
+      >
+        Required
+      </div>
+    </div>
+    <input
+      placeholder="Birth Date"
+      type="date"
+      class="inputStyle w-100"
+      formControlName="birthDate"
+    />
+    <div class="errorDiv">
+      <div
+        *ngIf="submitted && f.birthDate.errors && f.birthDate.errors.required"
+        class="errorMsg"
+      >
+        Required
+      </div>
+    </div>
+    <input
+      placeholder="Mobile"
+      class="inputStyle w-100"
+      formControlName="mobile"
+      type="number"
+    />
+    <div class="errorDiv">
+      <div
+        *ngIf="submitted && f.mobile.errors && f.mobile.errors.required"
+        class="errorMsg"
+      >
+        Required
+      </div>
+    </div>
+    <input placeholder="City" class="inputStyle w-100" formControlName="city" />
+    <div class="errorDiv">
+      <div
+        *ngIf="submitted && f.city.errors && f.city.errors.required"
+        class="errorMsg"
+      >
+        Required
+      </div>
+    </div>
+
+    <div>
+      <button class="btn btn-primary w-100 my-3">
+        {{ edit == true ? "Update" : "Add" }}
+      </button>
+    </div>
+  </form>
+</div>

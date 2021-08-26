@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.inputStyle {
+  border: none;
+  background-color: #e0e0e0;
+  height: 35px;
+  border-radius: 2px;
+  padding: 10px;
+}
+
+input:focus-visible {
+  border: none !important;
+  outline-offset: -40px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.primary-background {
+  background-color: #0492c2;
+  color: white;
+}
+
+.primary-color {
+  color: #0492c2 !important;
+}
+
+.errorMsg {
+  color: red;
+  font-size: 14px;
+}
+
+.errorDiv {
+  height: 25px;
+  padding-top: 2px;
+}

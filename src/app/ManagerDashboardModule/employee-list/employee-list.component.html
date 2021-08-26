@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+
+<div style="margin: 50px" class="mt-4">
+  <div class="d-flex justify-content-end mb-4">
+    <button
+      class="btn btn-info primary-background"
+      (click)="triggerModal(modalData)"
+    >
+      Add New Employee
+    </button>
+  </div>
+  <app-table-data
+    [employeesData]="employeesData"
+    [tableHeading]="tableHeading"
+    (getEmployeesData)="getEmployeesData($event)"
+    (triggerModal)="triggerModal($event)"
+    #modalData
+  ></app-table-data>
+</div>
+
+<ng-template #modalData let-modal>
+  <app-add-edit-modal
+    (closeTheModal)="closeTheModal($event)"
+  ></app-add-edit-modal>
+</ng-template>

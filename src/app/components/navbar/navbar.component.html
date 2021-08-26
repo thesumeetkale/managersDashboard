@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand navbar-light primary-background">
+  <a class="navbar-brand">Welcome {{ name }}</a>
+
+  <div
+    class="collapse navbar-collapse d-flex justify-content-end"
+    id="navbarSupportedContent"
+  >
+    <span class="form-inline my-4 my-lg-0">
+      <ul class="nav navbar-nav navbar-right text-uppercase">
+        <li class="dropdown" class="dropdown-left-manual">
+          <a
+            href="#"
+            class="nav-link dropdown-toggle"
+            data-toggle="dropdown"
+            style="color: white"
+          >
+            Options <span class="caret"></span
+          ></a>
+
+          <ul class="dropdown-menu dropdown-left-manual" role="menu">
+            <!-- <li><a class="dropdown-item cursor">Employees</a></li>
+            <li><a class="dropdown-item cursor">Location</a></li> -->
+            <li>
+              <a class="dropdown-item cursor" (click)="logOut()">Log Out</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </span>
+  </div>
+</nav>

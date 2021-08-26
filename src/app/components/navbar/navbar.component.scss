@@ -1,0 +1,12 @@
+.dropdown-left-manual {
+  right: 5px;
+  left: auto;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #0492c2;
+  color: white;
+}
